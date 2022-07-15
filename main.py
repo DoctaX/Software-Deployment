@@ -1,11 +1,12 @@
 import paramiko
 from creds import User
+from args import env_args
 
 user = User()
 creds = user.authenticate()
 
-local_software_path = 'C:\whatever'
-remote_host_path = '~/whatever'
+local_software_path = env_args[0]
+remote_host_path = env_args[1]
 
 host_file = open(".\hosts.txt", "r")
 
